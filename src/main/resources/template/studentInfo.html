@@ -1,0 +1,172 @@
+!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:insert="fragment/head">
+
+<body>
+
+<header th:insert="fragment/header"></header>
+<meta charset="utf-8"/>
+<style>
+.button {
+  background-color: Blue;
+  border: none;
+  color: White;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+
+<style>
+.buttonn {
+  background-color: Darkgreen;
+  border: none;
+  color: White;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+
+<style>
+.buttonnn {
+  background-color: DarkRed;
+  border: none;
+  color: White;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+
+<style>
+.h {
+  background-color: darkblue;
+  border: none;
+  color: White;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+
+<style> 
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+</style>
+
+</head>
+<body>
+
+<li>
+									<a th:href="@{/addStudent}" class="button">Add New Student</a>
+								</li>
+<div align="center" >
+    <h1>Student List</h1>
+   
+    <br/><br/>
+    
+    <form th:action="@{/searchs}">
+    <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" placeholder="Search.." />
+    &nbsp;
+    <input type="submit" class="button" value="Search" />
+    &nbsp;
+    <input type="button" value="Clear" class="button" id="btnClear" onclick="clearSearch()" />
+</form>
+<br>
+    
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+            
+									<th>Id</th>
+										<th>Name</th>
+									
+									<th>Address</th>
+									
+										
+										
+										<th>Number</th>
+										
+										<th>Teacher Name</th>
+										
+										<th>Gaurdian Name</th>
+										
+										
+										
+										<th>Subject</th>
+										
+										<th>Edit</th>
+									
+									<th>Delete</th>
+								
+										<a th:href="@{/students/export/pdf}" class="h">Export to PDF</a>
+									
+									</tr>
+								</thead>
+	<tbody>
+		<tr th:each="students: ${students}">
+		<td th:text="${students.id}"></td>
+										<td th:text="${students.name}"></td>
+										<td th:text="${students.address}"></td>
+										<td th:text="${students.num}"></td>
+										<td th:text="${students.teacher}"></td>
+										<td th:text="${students.gaurdianName}"></td>
+										<td th:text="${students.subject}"></td>
+										
+										<td><a th:href="@{/edis/{id}(id=${students.id})}" class="buttonn">Edit</a></td>
+										<td><a th:href="@{/deleTS/{id}(id=${students.id})}" class="buttonnn">Delete</a></td>
+										
+										
+												
+
+									
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+
+
+				
+				
+</body>
+<script type="text/javascript">
+    function clearSearch() {
+        window.location = "[[@{/search}]]";
+    }
+</script>
+</html>

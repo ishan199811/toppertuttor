@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:insert="fragment/head">
+
+<body>
+
+
+	
+	<header th:insert="fragment/header"></header>
+	
+
+	
+	
+	<div class="about-sec" id="about">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>A</span>bout
+					<span>U</span>s
+				</h3>
+				<div class="tittle-style">
+
+				</div>
+			</div>
+			<div class="about-sub">
+				<div class="col-md-6 about_bottom_left">
+					<h4>Welcome to
+						<span>Topper Tuttors</span>
+					</h4>
+					<p>We are working in the fields of education for more than 3 years. We are aligned to cultivate an expert group of experts willing to render their services.</p>
+					<p>We have more than 600 expert faculties and home tutors, the teacher for home tuition can arrive within 30 minutes at your door step. .</p>
+					<a class="button-style" th:href="@{/hire}">Join Now</a>
+				</div>
+				<!-- Stats-->
+				<div class="col-md-6 about2-info">
+					<img src="images/graduate.jpg" alt="Graduate" />
+				</div>
+				<!-- //Stats -->
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+	
+	
+	
+
+	
+	<!-- //about-team -->
+	<!-- middle section -->
+	<div class="middle-sec-agile">
+		<div class="container">
+			<h4> Our
+				<span>Best Study</span> Institute</h4>
+			<ul>
+				<li>
+					<div class="midle-left-w3l">
+						<span  aria-hidden="true"></span>
+					</div>
+					<div class="middle-right">
+						<h5><i class="arrow right"></i> Select A Course You Like And Explore It!</h5>
+						
+					</div>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<div class="midle-left-w3l">
+						<span  aria-hidden="true"></span>
+					</div>
+					<div class="middle-right">
+						<h5><i class="arrow right"></i> Join A Seminar To Know More About It!</h5>
+					
+					</div>
+					<div class="clearfix"></div>
+				</li>
+				<li>
+					<div class="midle-left-w3l">
+						<span  aria-hidden="true"></span>
+					</div>
+					<div class="middle-right">
+						<h5><i class="arrow right"></i> Get Enrolled And Start Better Future With Us!</h5>
+						
+					</div>
+					<div class="clearfix"></div>
+				</li>
+			</ul>
+			<a th:href="@{/hire}" class="button-style" >Join Now</a>
+		</div>
+		<div class="pencil-img">
+			<img src="images/bg5.png" alt="background" />
+		</div>
+	</div>
+	
+	
+	<!-- //modal -->
+	<!-- //news -->
+	<!-- footer -->
+<footer th:insert="fragment/footer"></footer>
+
+</body>
+
+</html>

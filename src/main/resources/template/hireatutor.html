@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:insert="fragment/head">
+
+<body>
+
+
+	
+	<header th:insert="fragment/header"></header>	<!-- //short-->
+	<!-- about -->
+	<div class="container">	
+	<div class="col-sm-12">
+	<div class="about-sec" id="about">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>Hire A </span>Tutor
+					
+					 
+				</h3>
+				<div class="tittle-style">
+
+				</div>
+			</div>
+			</div>
+			</div>
+			</div>
+	<!-- //modal -->
+	<!-- //news -->
+	<!-- footer -->
+	
+
+
+
+<div class="education_parallax_img">	
+<div class="container">	
+<div class="form_bg">
+    <form th:object="${hire}" th:action="@{/sav}" method="post" class="s12 admin-form">
+     <div class="col-sm-6 form-group">
+    	
+                            <input  type="text" th:field="*{studentName}" id="txtStudentName" class="form-control" placeholder="Students's Name">
+                            <span th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" style="color:red">Student Name error</span>
+                          
+                        </div>
+						
+						
+			<div class="col-sm-6 form-group">
+                            <input type="text" name="guardian" th:field="*{gaurdiansName}" class="form-control" placeholder="Guardian's Name">
+                            <span th:if="${#fields.hasErrors('gaurdiansName')}" th:errors="*{gaurdiansName}" style="color:red">Gaurdians Name error</span>
+                            <input type="hidden" name="vcerfvtxtGuardianName_ClientState" id="vcerfvtxtGuardianName_ClientState">
+                        </div>			
+						
+					<div class="col-sm-6 form-group">
+                            <select name="pgclass" th:field="*{forClass}" onchange="javascript:setTimeout('__doPostBack(\'ddlClass\',\'\')', 0)" id="ddlClass" class="form-control">
+	<option selected="selected" value="0">-----Select Class-----</option>
+	<option value="P.G To U.K.G">P.G To U.K.G</option>
+	<option value="1st To 6th">1st To 6th</option>
+	<option value="7th To 10th">7th To 10th</option>
+	<option value="11th,12th">11th &amp; 12th</option>
+
+</select>
+                            <span id="rfvddlClass" style="color:Red;display:none;"></span>
+                            <input type="hidden" name="vcerfvddlClass_ClientState" id="vcerfvddlClass_ClientState">
+                        </div>	
+						
+						
+					<div class="col-sm-6 form-group">
+                            <input  type="text" name="address" th:field="*{address}"  class="form-control" placeholder="Address">
+                           <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color:red"></span>
+                            <input type="hidden" name="vcerfvtxtAddress_ClientState" id="vcerfvtxtAddress_ClientState">
+                        </div>	
+					
+				<div class="col-sm-6 form-group">
+                            <input  type="text" name="subject"  class="form-control" placeholder="subject">
+                            <span th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}" style="color:red">Gaurdians Name error</span>
+                           
+                        </div>		
+						
+					<!--<div class="col-sm-6 form-group">
+                           <span class="multiselect-native-select">
+
+<div class="btn-group"><button type="button"  name="subject" class="multiselect dropdown-toggle btn btn-default" data-toggle="dropdown" title="Select Subjects"><span class="multiselect-selected-text">Select Subjects</span> <b class="caret"></b></button><ul class="multiselect-container dropdown-menu"></ul></div></span>
+                        </div>-->	
+						
+						
+						
+		<div class="col-sm-6 form-group">
+                            <select  id="ddlActivity" name="activity" class="form-control">
+	<option value="0">-----Select Activity-----</option>
+	<option value="1">Basic Drawing &amp; Colouring</option>
+	<option value="2">Creative Writing</option>
+	<option value="3">Judo/Karate</option>
+	<option value="4">Art &amp; Craft</option>
+	<option value="5">Chess</option>
+	<option value="6">Guitar</option>
+	<option value="7">Dance</option>
+	<option value="8">Vocal Music</option>
+	<option value="9">Fun Yoga</option>
+	<option value="10">OTHER</option>
+
+</select>
+                            <span id="rfvddlActivity" style="color:Red;display:none;"></span>
+                            <input type="hidden" name="vcerfvddlActivity_ClientState" id="vcerfvddlActivity_ClientState">
+                        </div>
+
+
+
+<div class="col-sm-6 form-group">
+                            <input  type="text" name="email" th:field="*{email}" class="form-control" placeholder="Email Id ">
+                        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red"></span>
+                        
+                        </div>
+
+
+				<div class="col-sm-6 form-group">
+                            <input  type="text" name="num" th:field="*{contactNo}" class="form-control" placeholder="Contact No">
+                          <span th:if="${#fields.hasErrors('contactNo')}" th:errors="*{contactNo}" style="color:red"></span>
+                            <input type="hidden" name="vcerfvtxtContactNo_ClientState" id="vcerfvtxtContactNo_ClientState">
+                        </div>		
+						
+						<div class="col-sm-12 form-group">
+                            <textarea name="requirement" rows="2" cols="20"  th:field="*{reqirements}"  class="form-control" placeholder="Requirements... "></textarea>
+                        <span th:if="${#fields.hasErrors('reqirements')}" th:errors="*{reqirements}" style="color:red"></span>
+                        </div>
+                       
+						
+						<div class="form_btn">
+                            <input type="Submit" name="submit" value="Submit Now" ></div>
+						
+						
+						</form>
+						<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p>Thank you we will contact you shortly</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+
+<div class="clearfix">
+                </div>
+
+
+
+					
+ </div>	
+
+
+					
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	<footer th:insert="fragment/footer"></footer>
+</body>
+
+</html>

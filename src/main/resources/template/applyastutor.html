@@ -1,0 +1,186 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:insert="fragment/head">
+
+<body>
+
+
+	
+	<header th:insert="fragment/header"></header>
+	
+	<div class="services-breadcrumb">
+		<div class="inner_breadcrumb">
+		
+			<img src="images/banner2.jpg" alt="banner" />
+			
+			
+		</div>
+	</div>
+	<!-- //short-->
+	<!-- about -->
+	<div class="container">	
+	<div class="col-sm-12">
+	<div class="about-sec" id="about">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>APPPLY AS </span>TUTOR
+					<span>U</span>s
+				</h3>
+				<div class="tittle-style">
+
+				</div>
+			</div>
+			</div>
+			</div>
+			</div>
+	<!-- //modal -->
+	<!-- //news -->
+	<!-- footer -->
+	
+
+
+
+
+
+<div class="education_parallax_img">	
+<div class="container">	
+<div class="form_bg">	
+<div class="col-md-12 col-sm-12">
+                        <div class="form-groups" style="text-align: center;color: Green;">
+                            <span id="lblmsg"></span>
+                        </div>
+                      <form th:object="${apply}"  enctype="multipart/form-data" th:action="@{/savee}" method="post"  class="s12 admin-form">
+                            <div class="col-sm-6 form-group">
+                                <input type="text" th:field="*{fullName}" id="txtFullName" class="form-control" placeholder="Full Name">
+                               <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}">Full name error</span>
+                                <input type="hidden" name="vcerfvtxtFullName_ClientState" id="vcerfvtxtFullName_ClientState">
+                            </div>
+                             <div class="col-sm-6 form-group">
+                                <select name="gender"  id="ddlgender" class="form-control">
+	<option selected="selected" value="0">Select Gender</option>
+	<option value="Male">Male</option>
+	<option value="Female">Female</option>
+
+</select>
+                                <span id="rfvddlgender" style="color:Red;display:none;"></span>
+                                <input type="hidden" name="vcerfvddlgender_ClientState" id="vcerfvddlgender_ClientState">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input type="text" th:field="*{contactNum}"  id="txtContactNo" class="form-control" placeholder="Contact No.">
+                                
+                               <span th:if="${#fields.hasErrors('contactNum')}" th:errors="*{contactNum}">Full name error</span>
+                                <input type="hidden" name="vcerfvtxtContactNo_ClientState" id="vcerfvtxtContactNo_ClientState">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <input type="text" th:field="*{emialId}"  id="txtEmailId" class="form-control" placeholder="EmailId">
+                                <span th:if="${#fields.hasErrors('emialId')}" th:errors="*{emialId}">Full name error</span>
+                                <input type="hidden" name="vcerfvtxtEmailId_ClientState" id="vcerfvtxtEmailId_ClientState">
+                            </div>
+                           
+                            <div class="col-sm-6 form-group">
+                                <input type ="text" th:field="*{qualification}"  id="txtQualification" class="form-control" placeholder="Qualification">
+                                <span th:if="${#fields.hasErrors('qualification')}" th:errors="*{qualification}">Full name error</span>
+                                <input type="hidden" name="vcerfvtxtQualification_ClientState" id="vcerfvtxtQualification_ClientState">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <select name="applyfor" id="ddlApplyFor" class="form-control">
+	<option selected="selected" value="0">Select Apply For</option>
+	<option value="Apply For School">Apply For School</option>
+	<option value="Apply For Home Tutor">Apply For Home Tutor</option>
+
+</select>
+                               <span th:if="${#fields.hasErrors('qualification')}" th:errors="*{qualification}">Full name error</span>
+                                <input type="hidden" name="vcerfvddlApplyFor_ClientState" id="vcerfvddlApplyFor_ClientState">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <select name="experiance" th:field="*{experience}" id="ddlExperience" class="form-control">
+	<option selected="selected" value="0">Select Experience</option>
+	<option value="0 - 5 Years">0 - 5 Years</option>
+	<option value="10 - 15 Years">10 - 15 Years</option>
+	<option value="15 - 20 Years">15 - 20 Years</option>
+	<option value="Above 20 Years">Above 20 Years</option>
+
+</select>
+                                <span id="rfvddlExperience" style="color:Red;display:none;"></span>
+                                <input type="hidden" name="vcerfvddlExperience_ClientState" id="vcerfvddlExperience_ClientState">
+                            </div>
+                            
+                            <div class="col-sm-6 form-group">
+                                <select name="vehical" th:field="*{vehical}" id="ddlownvehical" class="form-control">
+	<option selected="selected" value="0">Own Vehicle</option>
+	<option value="Yes">Yes</option>
+	<option value="No">No</option>
+
+</select>
+                                <span id="rfvddlownvehical" style="color:Red;display:none;"></span>
+                                <input type="hidden" name="vcerfvddlownvehical_ClientState" id="vcerfvddlownvehical_ClientState">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <div class="img_upload_tbl">
+                                    <div class="col-sm-3 col-md-4 col-lg-3">
+                                        <b>Resume:</b>
+                                    </div>
+                                    <div class="col-sm-9 col-md-8 col-lg-9">
+                                        <input type="file" name="profileImage" >
+                                        <span id="rfvfuResume" style="color:Red;display:none;"></span>
+                                        <input type="hidden" name="vcerfvfuResume_ClientState" id="vcerfvfuResume_ClientState">
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                    </div>
+                            <div class="col-sm-6 form-group">
+                                <textarea type="text" th:field="*{address}" rows="2" cols="20" id="txtAddress" class="form-control" placeholder="Address"></textarea>
+                               <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Full name error</span>
+                                <input type="hidden" name="vcerfvtxtAddress_ClientState" id="vcerfvtxtAddress_ClientState">
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <textarea name="message" rows="2" cols="20" id="txtMessage" class="form-control" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form_btn"> 
+                                <input type="submit" name="btnsubmit" value="Submit Now"   id="btnSubmit" class="btn-blue">
+                                </div>
+                                </form>
+                                <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p>Thank you we will contact you shortly</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+					
+                                
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            
+                        </div>
+						
+						
+                        <div class="clearfix">
+                        </div>
+                    </div>	
+ 	
+
+<footer th:insert="fragment/footer"></footer>
+
+</body>
+
+</html>

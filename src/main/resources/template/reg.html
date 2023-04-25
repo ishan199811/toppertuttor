@@ -1,0 +1,830 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up || Easy Haat  </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="site.css" rel="stylesheet"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <link href="css/CustomStyle.css" rel="stylesheet" />
+    <link href="css/w3.css" rel="stylesheet" />
+    <link rel="icon" href="../../../favicon.png" type="image/x-icon">
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body class="hold-transition login-page" style="background: linear-gradient(to right bottom, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)) 0% 0%; background-attachment:fixed;background-size:cover; color:green">
+    <div class="login-box">
+        <div class="login-logo">
+            <div class="logo text-center">
+                
+                <img src="css/logo.png" style="width: 217px; height:50px;" />
+            </div>
+        </div>
+
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+
+            
+
+<div id="login-overlay" class="modal-dialog w3-text-blue-grey" style="padding-top:0px;">
+    <div class="modal-content">
+        <div class="modal-header w3-green">
+            <button type="button" class="close" onclick="window.location='../'"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel"><b> Register  to Tenza Marketing Pvt Ltd. </b></h4>
+        </div>
+        <div class="modal-body" style="padding: 7px;">
+            <div class="well" style="padding: 6px; margin-bottom: -8px;">
+
+<div id="jAlert" class="hide" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+   <div id="jAlertMsg"></div>
+</div>
+
+
+
+
+<form action="/Account/SignUp" id="formSignUp" method="post" role="form">                    <div id="id01" class="w3-modal" style="display:none;background-color:#bababa;">
+                        <div class="w3-modal-content w3-card-8 " style="width: 500px; top:50px">
+
+                            <header class="w3-container w3-teal">
+                                <h5 class="pull-left">Validate OTP (One Time PassCode)</h5>
+                                <a href="javascript:" onclick="window.location = 'SignUp';"
+                                   class="w3-button pull-right w3-margin-top">Go Back</a>
+                            </header>
+                            <div class="w3-container w3-padding">
+                                <br />
+                                <p class="w3-margin-bottom">The OTP (One Time Passcode)has been sent to mobile +91  </p>
+
+                                <label>Please enter the otp below to verify your mobile number</label>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="OTPVerify" name="OTPVerify" placeholder="OTP Code" type="text" value="" />
+                                        <a href="javascript:" id="btnResendOtp"> Resend OTP </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" id="btnVerify" class="w3-btn w3-blue">Verify </button>
+                                    </div>
+                                </div>
+
+                                <br />
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div style="display:block">
+
+                        <div class="row w3-margin-top" style="display:none;">
+                            <div class="col-md-6">
+                                <label>Placement</label>
+
+
+                                <select class="form-control" id="Position" name="Position"><option value="Left">Left</option>
+<option value="Right">Right</option>
+</select>
+
+                                
+                            </div>
+
+                            <div class="col-md-6 col-xs-12">
+                                <label>Product <span class="w3-text-red">*</span> </label>
+
+
+                                <select class="form-control" id="productItem" name="productItem"><option value="Silver 6500">Silver 6500</option>
+<option value="Gold 10000">Gold 10000</option>
+</select>
+                                
+                            </div>
+                        </div>
+                        <div class="row w3-margin-top">
+                            
+                            <div class="col-md-6">
+                                <label>Title <span class="w3-text-red">*</span> </label>
+                                <select class="form-control" data-val="true" data-val-required="The Title field is required." id="title" name="title" placeholder="Title" type="text" value="">
+								<option> Select Title </option>
+								<option> Mr.</option>
+								<option> Mrs.</option>
+								</select>
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Full Name</label>
+                                <input class="form-control" data-val="true" data-val-length="Provide proper Full Name" data-val-length-max="100" data-val-length-min="10" data-val-required="You must provide a Full Name" id="name" maxlength="10" name="name" placeholder="Full Name" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Mobile" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row w3-margin-top">
+                            <div class="col-md-6">
+                                <label>Email </label>
+                                <input class="form-control" data-val="true" data-val-email="Invaild Email" data-val-required="The Email field is required." id="Email" name="Email" placeholder="Email" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label>Mobile No</label>
+                                <input class="form-control" data-val="true" data-val-length="Provide proper mobile no." data-val-length-max="100" data-val-length-min="10" data-val-required="You must provide a phone number" id="Mobile" maxlength="10" name="Mobile" placeholder="Mobile" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Mobile" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+						
+						<div class="row w3-margin-top">
+						<div class="col-md-6">
+                                <label>Gender <span class="w3-text-red">*</span> </label>
+                                <select class="form-control" data-val="true" data-val-required="The Title field is required." id="title" name="title" placeholder="Title" type="text" value="">
+								<option> Select Gender </option>
+								<option> Male</option>
+								<option> Female</option>
+								</select>
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="frist_name">DOB</label>
+                                <input name="ctl00$ContentPlaceHolder1$txtdob" type="text" id="ContentPlaceHolder1_txtdob" placeholder="DOB" class="form-control" />
+                                                        
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Mobile" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+						
+                        <div class="row w3-margin-top">
+                            <div class="col-md-4">
+                                <label>Sponsor Id</label>
+                                <input class="form-control" data-val="true" data-val-required="The SponsorID field is required." id="SponsorID" name="SponsorID" placeholder="Sponsot ID" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="SponsorID" data-valmsg-replace="true"></span>
+                                <a href="#" class="getsponsor">I Don't Have A Sponsor</a>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Sponsor Name</label>
+                                <input class="form-control" data-val="true" data-val-required="The SponsorName field is required." id="SponsorName" name="SponsorName" placeholder="Sponsor Name" readOnly="true" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="SponsorName" data-valmsg-replace="true"></span>
+                            </div>
+                        
+						
+						
+                            
+                            <div class="col-md-4">
+                                <label>Placement <span class="w3-text-red">*</span> </label>
+                                <select class="form-control" data-val="true" data-val-required="The Title field is required." id="title" name="title" placeholder="Title" type="text" value="">
+								
+								<option> Left</option>
+								<option> Right</option>
+								</select>
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                            </div>
+							</div>
+						
+						
+						
+						 <div class="row">
+                                                    <div class="container">
+                                                        <div class="form-group">
+
+                                                            <span class="checkbox ValidateCheck"><input id="ContentPlaceHolder1_agree" type="checkbox" name="ctl00$ContentPlaceHolder1$agree" />I agree with the terms and conditions</span>
+                                                   
+
+                                                            
+                                                          
+                                                            
+														</div>
+                                                    </div>
+                                                </div>
+						
+                       
+                        <div class="row w3-margin-top hide">
+                            <div class="col-md-6">
+                                <label>Country</label>
+                                <select class="form-control" data-val="true" data-val-required="The Country field is required." id="Country" name="Country">
+                                    <option>--Select--</option>
+                                    <option>Afghanistan</option>
+                                    <option>Albania</option>
+                                    <option>Algeria</option>
+                                    <option>American Samoa</option>
+                                    <option>Andorra</option>
+                                    <option>Angola</option>
+                                    <option>Anguilla</option>
+                                    <option>Antarctica</option>
+                                    <option>Antigua And Barbuda</option>
+                                    <option>Argentina</option>
+                                    <option>Armenia</option>
+                                    <option>Aruba</option>
+                                    <option>Australia</option>
+                                    <option>Austria</option>
+                                    <option>Azerbaijan</option>
+                                    <option>Bahamas</option>
+                                    <option>Bahrain</option>
+                                    <option>Bangladesh</option>
+                                    <option>Barbados</option>
+                                    <option>Belarus</option>
+                                    <option>Belgium</option>
+                                    <option>Belize</option>
+                                    <option>Benin</option>
+                                    <option>Bermuda</option>
+                                    <option>Bhutan</option>
+                                    <option>Bolivia</option>
+                                    <option>Bosnia And Herzegowina</option>
+                                    <option>Botswana</option>
+                                    <option>Bouvet Island</option>
+                                    <option>Brazil</option>
+                                    <option>British Indian Ocean Territory</option>
+                                    <option>Brunei Darussalam</option>
+                                    <option>Bulgaria</option>
+                                    <option>Burkina Faso</option>
+                                    <option>Burundi</option>
+                                    <option>Cambodia</option>
+                                    <option>Cameroon</option>
+                                    <option>Canada</option>
+                                    <option>Cape Verde</option>
+                                    <option>Cayman Islands</option>
+                                    <option>Central African Republic</option>
+                                    <option>Chad</option>
+                                    <option>Chile</option>
+                                    <option>China</option>
+                                    <option>Christmas Island</option>
+                                    <option>Cocos (Keeling) Islands</option>
+                                    <option>Colombia</option>
+                                    <option>Comoros</option>
+                                    <option>Congo</option>
+                                    <option>Cook Islands</option>
+                                    <option>Costa Rica</option>
+                                    <option>Cote D'Ivoire</option>
+                                    <option>Croatia (Local Name: Hrvatska)</option>
+                                    <option>Cuba</option>
+                                    <option>Cyprus</option>
+                                    <option>Czech Republic</option>
+                                    <option>Denmark</option>
+                                    <option>Djibouti</option>
+                                    <option>Dominica</option>
+                                    <option>Dominican Republic</option>
+                                    <option>East Timor</option>
+                                    <option>Ecuador</option>
+                                    <option>Egypt</option>
+                                    <option>El Salvador</option>
+                                    <option>Equatorial Guinea</option>
+                                    <option>Eritrea</option>
+                                    <option>Estonia</option>
+                                    <option>Ethiopia</option>
+                                    <option>Falkland Islands (Malvinas)</option>
+                                    <option>Faroe Islands</option>
+                                    <option>Fiji</option>
+                                    <option>Finland</option>
+                                    <option>France</option>
+                                    <option>French Guiana</option>
+                                    <option>French Polynesia</option>
+                                    <option>French Southern Territories</option>
+                                    <option>Gabon</option>
+                                    <option>Gambia</option>
+                                    <option>Georgia</option>
+                                    <option>Germany</option>
+                                    <option>Ghana</option>
+                                    <option>Gibraltar</option>
+                                    <option>Greece</option>
+                                    <option>Greenland</option>
+                                    <option>Grenada</option>
+                                    <option>Guadeloupe</option>
+                                    <option>Guam</option>
+                                    <option>Guatemala</option>
+                                    <option>Guinea</option>
+                                    <option>Guinea-Bissau</option>
+                                    <option>Guyana</option>
+                                    <option>Haiti</option>
+                                    <option>Heard And Mc Donald Islands</option>
+                                    <option>Holy See (Vatican City State)</option>
+                                    <option>Honduras</option>
+                                    <option>Hong Kong</option>
+                                    <option>Hungary</option>
+                                    <option>Icel And</option>
+                                    <option Selected value="India">India</option>
+                                    <option>Indonesia</option>
+                                    <option>Iran (Islamic Republic Of)</option>
+                                    <option>Iraq</option>
+                                    <option>Ireland</option>
+                                    <option>Israel</option>
+                                    <option>Italy</option>
+                                    <option>Jamaica</option>
+                                    <option>Japan</option>
+                                    <option>Jordan</option>
+                                    <option>Kazakhstan</option>
+                                    <option>Kenya</option>
+                                    <option>Kiribati</option>
+                                    <option>Korea, Dem People'S Republic</option>
+                                    <option>Korea, Republic Of</option>
+                                    <option>Kuwait</option>
+                                    <option>Kyrgyzstan</option>
+                                    <option>Lao People'S Dem Republic</option>
+                                    <option>Latvia</option>
+                                    <option>Lebanon</option>
+                                    <option>Lesotho</option>
+                                    <option>Liberia</option>
+                                    <option>Libyan Arab Jamahiriya</option>
+                                    <option>Liechtenstein</option>
+                                    <option>Lithuania</option>
+                                    <option>Luxembourg</option>
+                                    <option>Macau</option>
+                                    <option>Macedonia</option>
+                                    <option>Madagascar</option>
+                                    <option>Malawi</option>
+                                    <option>Malaysia</option>
+                                    <option>Maldives</option>
+                                    <option>Mali</option>
+                                    <option>Malta</option>
+                                    <option>Marshall Islands</option>
+                                    <option>Martinique</option>
+                                    <option>Mauritania</option>
+                                    <option>Mauritius</option>
+                                    <option>Mayotte</option>
+                                    <option>Mexico</option>
+                                    <option>Micronesia, Federated States</option>
+                                    <option>Moldova, Republic Of</option>
+                                    <option>Monaco</option>
+                                    <option>Mongolia</option>
+                                    <option>Montserrat</option>
+                                    <option>Morocco</option>
+                                    <option>Mozambique</option>
+                                    <option>Myanmar</option>
+                                    <option>Namibia</option>
+                                    <option>Nauru</option>
+                                    <option>Nepal</option>
+                                    <option>Netherlands</option>
+                                    <option>Netherlands Ant Illes</option>
+                                    <option>New Caledonia</option>
+                                    <option>New Zealand</option>
+                                    <option>Nicaragua</option>
+                                    <option>Niger</option>
+                                    <option>Nigeria</option>
+                                    <option>Niue</option>
+                                    <option>Norfolk Island</option>
+                                    <option>Northern Mariana Islands</option>
+                                    <option>Norway</option>
+                                    <option>Oman</option>
+                                    <option>Pakistan</option>
+                                    <option>Palau</option>
+                                    <option>Panama</option>
+                                    <option>Papua New Guinea</option>
+                                    <option>Paraguay</option>
+                                    <option>Peru</option>
+                                    <option>Philippines</option>
+                                    <option>Pitcairn</option>
+                                    <option>Poland</option>
+                                    <option>Portugal</option>
+                                    <option>Puerto Rico</option>
+                                    <option>Qatar</option>
+                                    <option>Reunion</option>
+                                    <option>Romania</option>
+                                    <option>Russian Federation</option>
+                                    <option>Rwanda</option>
+                                    <option>Saint K Itts And Nevis</option>
+                                    <option>Saint Lucia</option>
+                                    <option>Saint Vincent, The Grenadines</option>
+                                    <option>Samoa</option>
+                                    <option>San Marino</option>
+                                    <option>Sao Tome And Principe</option>
+                                    <option>Saudi Arabia</option>
+                                    <option>Senegal</option>
+                                    <option>Seychelles</option>
+                                    <option>Sierra Leone</option>
+                                    <option>Singapore</option>
+                                    <option>Slovakia (Slovak Republic)</option>
+                                    <option>Slovenia</option>
+                                    <option>Solomon Islands</option>
+                                    <option>Somalia</option>
+                                    <option>South Africa</option>
+                                    <option>South Georgia , S Sandwich Is.</option>
+                                    <option>Spain</option>
+                                    <option>Sri Lanka</option>
+                                    <option>St. Helena</option>
+                                    <option>St. Pierre And Miquelon</option>
+                                    <option>Sudan</option>
+                                    <option>Suriname</option>
+                                    <option>Svalbard, Jan Mayen Islands</option>
+                                    <option>Sw Aziland</option>
+                                    <option>Sweden</option>
+                                    <option>Switzerland</option>
+                                    <option>Syrian Arab Republic</option>
+                                    <option>Taiwan</option>
+                                    <option>Tajikistan</option>
+                                    <option>Tanzania, United Republic Of</option>
+                                    <option>Thailand</option>
+                                    <option>Togo</option>
+                                    <option>Tokelau</option>
+                                    <option>Tonga</option>
+                                    <option>Trinidad And Tobago</option>
+                                    <option>Tunisia</option>
+                                    <option>Turkey</option>
+                                    <option>Turkmenistan</option>
+                                    <option>Turks And Caicos Islands</option>
+                                    <option>Tuvalu</option>
+                                    <option>Uganda</option>
+                                    <option>Ukraine</option>
+                                    <option>United Arab Emirates</option>
+                                    <option>United Kingdom</option>
+                                    <option>United States</option>
+                                    <option>United States Minor Is.</option>
+                                    <option>Uruguay</option>
+                                    <option>Uzbekistan</option>
+                                    <option>Vanuatu</option>
+                                    <option>Venezuela</option>
+                                    <option>Viet Nam</option>
+                                    <option>Virgin Islands (British)</option>
+                                    <option>Virgin Islands (U.S.)</option>
+                                    <option>Wallis And Futuna Islands</option>
+                                    <option>Western Sahara</option>
+                                    <option>Yemen</option>
+                                    <option>Yugoslavia</option>
+                                    <option>Zaire</option>
+                                    <option>Zambia</option>
+                                    <option>Zimbabwe</option>
+                                </select>
+                            </div>
+                             <div class="col-md-6">
+                                <label>Pan No</label>
+                                <input class="form-control" id="txtPanNo" name="Pan" placeholder="Pan" type="text" value="" />
+                                <span class="field-validation-valid text-danger" data-valmsg-for="Pan" data-valmsg-replace="true"></span>
+
+                            </div>
+                           
+                        </div>
+                    
+                        <div class="row w3-margin-top hide">
+                            <div class="col-md-6">
+                                <label>Address</label>
+                                
+                                <input class="form-control" id="shipName" name="shipName" placeholder="Address" type="text" value="" />
+
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <label>Area</label>
+                                <input class="form-control" id="area" name="area" placeholder="Area" type="text" value="" />
+
+                            </div>
+                            
+
+
+                        </div>
+                        <div class="row w3-margin-top hide">
+
+                            <div class="col-md-6 ">
+                                <label>City</label>
+                                <input class="form-control" id="city" name="city" placeholder="city" type="text" value="" />
+
+                            </div>
+                            <div class="col-md-6">
+                                <label>Pin Code</label>
+                                <input class="form-control" id="pincode" name="pincode" placeholder="Pin Code" type="text" value="" />
+
+                            </div>
+                          
+
+                        </div>
+                        <div class="row w3-margin-top">
+
+
+                            <div class="col-md-6 hide">
+                                <label>State</label>
+                                
+                                <input class="form-control" id="state" name="state" placeholder="state" type="text" value="" />
+
+                                
+                            </div>
+                            <div class="col-md-6" id="otpblock" style="display:none">
+                                <label>OTP</label>
+                                
+                                <input class="form-control" id="otpstring" name="otpstring" placeholder="OTP" type="text" value="" />
+
+                                
+                            </div>
+
+                            
+                        </div>
+                          <div class="row w3-margin-top hide">
+
+                             <div class="col-md-6">
+                                <label>Street</label>
+                                
+                                <input class="form-control" id="shipstate" name="shipstate" placeholder="Street" type="text" value="" />
+
+                                
+                            </div>
+                          
+                            <div class="col-md-6"  >
+                                <label>Road</label>
+                                <input class="form-control" id="shipArea2" name="shipArea2" placeholder="Road" type="text" value="" />
+
+                            </div>
+                        </div> 
+                          <div class="row w3-margin-top hide">
+
+
+                              <div class="col-md-6">
+                                  <label> Spouse Name</label>
+                                  <input class="form-control" id="billcity" name="billcity" placeholder="Spouse Name" type="text" value="" />
+                              </div>
+                              <div class="col-md-6">
+                                  <label>Nominee</label>
+                                  <input class="form-control" id="billcountry" name="billcountry" placeholder="Nominee" type="text" value="" />
+                              </div>
+
+                          </div>
+
+                       
+
+                    </div>
+                    <div class="row w3-margin-top hidden">
+                        <div class="col-md-12" style="pointer-events:none">
+                            
+                            <input data-val="true" data-val-required="The OTP field is required." id="OTP" name="OTP" type="hidden" value="False" />
+                        </div>
+                    </div>
+                    <div class="row w3-margin-top">
+                        <div class="col-md-6 text-left">
+                            <a href="Login" class=" w3-text-red w3-padding-top"> Back To Login</a>
+                        </div>
+                        
+                        <div class="col-md-6" id="divbtnVerifyNO" style="display:block">
+                            <input type="button" id="btnVerifyNO" class="w3-btn w3-green w3-hover-indigo" value="Submit"  />
+                        </div> 
+                       
+                    </div>
+</form>            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <!-- /.login-box-body -->
+        <div class="login-footer text-center w3-text-blue">
+            Copyright &copy; 2021 <b><a href="/" class="text-black">Tenza Marketing Pvt Ltd.   </a></b><br>
+            All rights reserved
+        </div>
+    </div>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+<script src="/Scripts/knockout-3.4.0.debug.js"></script>
+<script src="/Scripts/knockout.mapping-latest.debug.js"></script>
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+
+    <script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/respond.js"></script>
+
+    <script src="/Scripts/sweetalert.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            getbanklist();
+            //for input color
+            $('.field-validation-error').each(function () {
+                $(this).closest("div").find("input").addClass('w3-pale-red');
+                $(this).closest("div").find("select").addClass('w3-pale-red');
+
+            });
+            // for remove color input control
+            $('.field-validation-error').closest("div").find("input").on('change', function () {
+                $(this).removeClass('w3-pale-red').removeClass('input-validation-error');
+                $(this).closest("div").find("span.field-validation-error").removeClass('field-validation-error').addClass('field-validation-valid').addClass('hide');
+
+            });
+            //for remove color and error from select
+            $('.field-validation-error').closest("div").find("select").on('change', function () {
+                $(this).removeClass('w3-pale-red').removeClass('input-validation-error');
+                $(this).closest("div").find("span.field-validation-error").removeClass('field-validation-error').addClass('field-validation-valid').addClass('hide');
+
+            });
+            $('#txtPanNo').keypress(function (event) {
+              
+                //var key = event.which;
+                //var esc = (key == 127 || key == 8 || key == 0 || key == 46);
+                ////alert(key); 
+                ////var nor = $("#txtPANNumber").mask("aaaaa9999a"); 
+                //var regExp = /[a-zA-z]{5}\d{4}[a-zA-Z]{1}/;
+                //var txtpan = $(this).val();
+                //alert(txtpan);
+                //if (txtpan.length < 10) {
+                //    if (txtpan.match(regExp)) {
+                //        //event.preventDefault(); 
+                //    }
+                //} else { event.preventDefault(); }
+            
+            });
+            // for get sponsor name from database
+            $('#SponsorID').on('change', function ()
+            {
+                debugger;
+
+                if (this.value != '')
+                {
+                    $.post("GetSponsorName?TrackID=" + this.value, function (data, status) {
+                        if (status == 'success' && data != '') {
+                            $('#SponsorName').val(data);
+                        }
+                        else {
+                            $('#SponsorName').val('');
+                            swal("Not Exist", "Sponsor ID not exist... try other Sponsor ID", "error");
+                        }
+                    });
+                }
+            });
+            $(".getsponsor").click(function () {
+                debugger;
+                $.get("GetrootSponsor", function (data, status) {
+
+                    if (status == 'success' && data != '') {
+
+                        $('#SponsorName').val(data.data.name);
+                        $('#SponsorID').val(data.data.trackid);
+                    }
+                    else {
+                        $('#SponsorName').val('');
+                        swal("Not Exist", "Sponsor ID not exist... try other Sponsor ID", "error");
+                    }
+                });
+            });
+            // 
+            $('#TrackId').on('change', function () {
+                if (this.value != '') {
+                    $.post("GetValidTrackId?TrackID=" + this.value, function (data, status) {
+                      
+                        if (status == 'success' && data=='True') {
+                         
+                        }
+                        else {
+                           
+                        swal("Already Exist", "User Name Already  exist... try other User Name", "error");
+                        }
+                    });
+                }
+            });
+            $('#btnResendOtp').on('click', function () {
+
+                $.post("SentVerification?mobile=" + $('#Mobile').val(), function (data, status) {
+                    if (status == 'success' && data == 'True') {
+                        $('#OTP').val('True');
+                        swal("Sent", "Veification code has been send to your mobile.", "success");
+                    }
+                    else {
+                        swal("Not Valid", "Entered OTP is wrrong..", "error");
+                    }
+                });
+            });
+            $('#btnVerifyNO').on('click', function () {
+
+                $.post("SentVerificationOnMobile?mobile=" + $('#Mobile').val() + "&email=" + $('#Email').val(), function (data, status) {
+                    if (status == 'success' && data == 'True') {
+
+                        $('#divbtnResendOtp1').css("display", "block");
+                        $('#divbtnSignUp').css("display", "block");
+                        $('#otpblock').css("display", "block");
+                        $('#divbtnVerifyNO').css("display", "none");
+                        swal("Sent", "Veification code has been send to your mobile.", "success");
+                    }
+                    else {
+                        swal("Not Valid", "Entered OTP is wrrong..", "error");
+                    }
+                });
+            });
+              $('#btnResendOtp1').on('click', function () {
+
+                $.post("SentVerificationOnMobile?mobile=" + $('#Mobile').val(), function (data, status) {
+                    if (status == 'success' && data == 'True') {
+
+                        $('#btnSignUp').css("display", "block");
+                        $('#otpblock').css("display", "block");
+                        $('#btnVerifyNO').css("display", "none");
+                        swal("Sent", "Veification code has been send to your mobile.", "success");
+                    }
+                    else {
+                        swal("Not Valid", "Entered OTP is wrrong..", "error");
+                    }
+                });
+            });
+
+            $('#btnVerify').on('click', function () {
+                if ($('#OTPVerify').val() != '') {
+                    $.post("GetVerifyStatus?OTPVerify=" + $('#OTPVerify').val(), function (data, status) {
+                        if (status == 'success' && data == '2') {
+                            $('#OTP').val('True');
+                            $('#formSignUp').submit();
+                        }
+                        else {
+                            if (data == '0')
+                                swal("Not Valid", "Entered OTP is wrrong..", "error");
+                            else
+                                swal("Session Time Out", " Your Otp Code has been expired Try again", "error");
+                            $('#OTPVerify').addClass('w3-pale-red');
+                        }
+                    });
+                }
+                else {
+                    $('#OTPVerify').addClass('w3-pale-red');
+                }
+            });
+
+        });
+        $("#ifsc").on("change", function () {
+
+            var ifsc = $("#ifsc").val();
+            if (ifsc != '') {
+                $.post(
+                    'GetBankAddresByIfscCode?ifsc=' + ifsc,
+                    null,
+
+                    function (response) {
+                        $('#bankaddress').val(response.ADDRESS);
+                        $('#BranchName').val(response.BRANCH);
+                    }
+                );
+            }
+        });
+        $('#txtPanNo').on('change', function () {
+            debugger;
+            var regex = /([A-Z]){5}([0-9]){4}([A-Z]){1}$/;
+            if (regex.test($("#txtPanNo").val().toUpperCase())) {
+                if (this.value == '') {
+
+                }
+                else {
+                    $.post("GetPan?Pan=" + this.value, function (data, status) {
+                        if (status == 'success' && data != '') {
+                            swal("Already Exist", "Pan Number alread exist... try other Pan", "error");
+                            $('#Pan').val('');
+                        }
+                        else {
+
+                            swal("Exist", "go ahead", "success");
+                        }
+                    });
+                }
+            } else {
+                swal("Invalid Format", "Invalid Format", "error");
+                $('#Pan').val('');
+
+                return false;
+            }
+          
+        });
+        $('#SponsorID').on('change', function () {
+            debugger;
+            if (($('#Parentid').val() != '')  && ($('#SponsorID').val() != '')) {
+                $.post("GetParentName?TrackID=" + this.value+"&sponserid=" + $('#SponsorID').val(), function (data, status) {
+                    if (status == 'success' && data != '') {
+                        $('#ParentName').val(data);
+                    }
+                    else {
+                        $('#SponsorID').val('');
+                        $('#SponsorName').val('');
+                        $('#ParentName').val('');
+                        $('#Parentid').val('');
+                        swal("Not Exist", "Parent ID not exist... try other Parent ID", "error");
+                    }
+                });
+            }
+        });
+        $('#Parentid').on('change', function () {
+            debugger;
+            if (($('#Parentid').val() != '')  && ($('#SponsorID').val() != '')) {
+                $.post("GetParentName?TrackID=" + this.value+ "&sponserid=" + $('#SponsorID').val(), function (data, status) {
+                    if (status == 'success' && data != '') {
+                        $('#ParentName').val(data);
+                    }
+                    else {
+                        $('#SponsorID').val('');
+                        $('#SponsorName').val('');
+                        $('#ParentName').val('');
+                        $('#Parentid').val('');
+                        swal("Not Exist", "Parent ID not exist... try other Parent ID", "error");
+                    }
+                });
+            }
+        });
+
+      
+        function getbanklist() {
+            $.get(
+                'Banklist',
+                null,
+                function (response) {
+                    $.each(response.data, function (index, value) {
+                        $('#BankName').append($('<option/>', {
+                            value: value.bankname,
+                            text: value.bankname
+                        }));
+                    });
+                }
+            );
+        }
+    </script>
+
+
+
+</body>
+</html>
+

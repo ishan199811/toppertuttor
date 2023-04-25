@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:insert="fragment/head">
+
+<body>
+
+
+	
+	<header th:insert="fragment/header"></header>
+	
+
+
+				<h4>Add new Student</h4>
+				<form action="#"  th:object="${students}" th:action="@{/saveS}" method="post"  class="s12 admin-form">
+					<div class="form-group row">
+				
+				<div class="col-8">
+				<p>Student Name:</p>
+					<input type="text" th:field="*{name}" class="form-control" placeholder="Name">
+					
+				</div>
+			</div>
+					<div class="form-group row">
+				
+				<div class="col-8">
+				<p>Address:</p>
+					<input type="text" th:field="*{address}" class="form-control" placeholder="address">
+				
+				</div>
+			</div>
+					<div class="form-group row">
+				
+				<div class="col-8">
+				<p>Number:</p>
+					<input type="text" th:field="*{num}" class="form-control" placeholder="Number">
+					
+				</div>
+			</div>
+			<div class="col-8">
+				<p>Subject:</p>
+					<input type="text" th:field="*{teacher}" class="form-control" placeholder="subject">
+					
+				</div>
+			
+			<div class="col-8">
+				<p>Gaurdian Name:</p>
+					<input type="text" th:field="*{gaurdianName}" class="form-control" placeholder="Gaurdian Name">
+					
+				</div>
+			
+			<div class="col-8">
+				<p>Subject:</p>
+					<input type="text" th:field="*{subject}" class="form-control" placeholder="teacher">
+					
+				</div>
+			<div class="col-8">
+				<p>Teacher Name:</p>
+					<input type="text" th:field="*{teacher}" class="form-control" placeholder="TeacherName">
+					
+				</div>
+				<div class="form-group row">
+				
+				
+					<input type="Submit" name="save" value="Submit" >
+					</div>
+			</form>		
+					
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:insert="fragment/head">
+
+<body>
+
+
+	
+	<header th:insert="fragment/header"></header>
+	<!-- short-->
+	<div class="services-breadcrumb">
+	<div class="container">
+		<div class="inner_breadcrumb">
+			<ul class="short_ls">
+				<li>
+					<a href="index.html">Home</a>
+					<span>| |</span>
+				</li>
+				<li>Contact Us</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	
+	
+	<!-- //short-->
+	<!-- contact -->
+	<div class="contact">
+		<div class="container">
+			<div class="title-div">
+				<h3 class="tittle">
+					<span>C</span>ontact
+					<span>U</span>s
+				</h3>
+				<div class="tittle-style">
+
+				</div>
+			</div>
+			<div class="contact-row">
+				<div class="col-md-6 contact-text1">
+					<h4>Contact Our
+						<span>Topper Tutor Team</span>
+					</h4>
+					
+				</div>
+				<div class="col-md-6 contact-w3lsright">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1789.8747633968007!2d78.18859465792976!3d26.20482499585937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c41b2765f441%3A0xed5c56507007c43a!2sGupta+%26+Co.!5e0!3m2!1sen!2sin!4v1555210502438!5m2!1sen!2sin" width="100" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div class="contact-lsleft">
+		<div class="container">
+			<div class="address-grid">
+				<h4>Contact Details</h4>
+				<ul class="w3_address">
+					<li>
+						<span class="fa fa-globe" aria-hidden="true"></span><p>Near Salashar Mall, Infront of Hanuman Mandir
+							<br> Sales Tax Office, City Center Gwalior -474001</p>
+					</li>
+					<li>
+						<span class="fa fa-envelope-o" aria-hidden="true"></span>
+						<a href="mailto:info@toppertutor.com">info@toppertutor.com</a>
+					</li>
+					<li>
+						<span class="fa fa-phone" aria-hidden="true"></span>+91 8707868641, 9407848237, 9340782229
+					</li>
+				</ul>
+			</div>
+				<div class="contact-grid agileits">
+				<h4>Get In Touch</h4>
+				<form   th:object="${contact}" th:action="@{/save}" method="post"  class="s12 admin-form">
+				
+					<div class="form-group row">
+				
+				<div class="col-8">
+					<input type="text" th:field="*{name}" class="form-control " placeholder="Name">
+	 <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:white">Student Name error</span>
+				</div>
+			</div>
+					<div class="form-group row">
+				
+				<div class="col-8">
+					<input type="email"  th:field="*{email}" class="form-control " placeholder="Email">
+					 <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:white">Student Name error</span>
+				</div>
+			</div>
+					<div class="form-group row">
+				
+				<div class="col-8">
+					<input type="text" th:field="*{num}" class="form-control" placeholder="Number">
+					 <span th:if="${#fields.hasErrors('num')}" th:errors="*{num}" style="color:white">Student Name error</span>
+				</div>
+			</div>
+				<div class="form-group row">
+				
+				<div class="col-8">
+					<input type="text" th:field="*{message}" class="form-control " placeholder="Message" width="48" height="48">
+					  <span th:if="${#fields.hasErrors('message')}" th:errors="*{message}" style="color:rgb(255, 0, 0)">Student Name error</span>
+				</div>
+			</div>
+					<input type="submit"   ></input>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+
+
+	<!-- footer -->
+<footer th:insert="fragment/footer"></footer>
+
+</body>
+
+</html>
